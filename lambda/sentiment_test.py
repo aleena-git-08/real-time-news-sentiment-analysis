@@ -15,10 +15,14 @@ for article in data["results"][:5]:
     title = article["title"]
 
     score = TextBlob(title).sentiment.polarity
-    
+
     if score > 0:
         sentiment = "Positive"
     elif score < 0:
         sentiment = "Negative"
     else:
         sentiment = "Neutral"
+
+    print(title)
+    print("Sentiment:", sentiment)
+    print("-" * 50)
