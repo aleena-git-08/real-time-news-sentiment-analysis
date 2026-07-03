@@ -39,4 +39,6 @@ for article in data["results"][:5]:
         (title, sentiment)
     )
 
-conn.commit()   
+conn.commit()
+
+print("Data Saved Successfully")   
