@@ -22,3 +22,7 @@ st.title("News Sentiment Dashboard")
 
 st.subheader("News Records")
 st.dataframe(df)
+
+st.subheader("Sentiment Summary")
+
+st.write(df["sentiment"].value_counts())
