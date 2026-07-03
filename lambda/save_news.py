@@ -26,3 +26,8 @@ for article in data["results"][:15]:
         sentiment = "Negative"
     else:
         sentiment = "Neutral"
+
+    news_list.append({
+        "title": title,
+        "sentiment": sentiment
+    })
