@@ -13,3 +13,16 @@ url = f"https://newsdata.io/api/1/latest?apikey={API_KEY}&language=en"
 data = requests.get(url).json()
 
 news_list = []
+
+for article in data["results"][:15]:
+
+    title = article["title"]
+
+    score = TextBlob(title).sentiment.polarity
+
+    if score > 0:
+        sentiment = "Positive"
+    elif score < 0:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
