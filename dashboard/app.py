@@ -17,3 +17,5 @@ conn = psycopg2.connect(
 query = "SELECT * FROM news_data"
 
 df = pd.read_sql(query, conn)
+
+st.title("News Sentiment Dashboard")
