@@ -26,3 +26,5 @@ st.dataframe(df)
 st.subheader("Sentiment Summary")
 
 st.write(df["sentiment"].value_counts())
+
+conn.close()
