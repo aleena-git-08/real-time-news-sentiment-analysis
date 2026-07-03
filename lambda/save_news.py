@@ -33,3 +33,7 @@ for article in data["results"][:15]:
     })
 
 df = pd.DataFrame(news_list)
+
+df.to_csv("data/news_sentiment.csv", index=False)
+
+print("File saved successfully!")
