@@ -13,3 +13,7 @@ conn = psycopg2.connect(
     password=os.getenv("DB_PASSWORD"),
     port=os.getenv("DB_PORT")
 )
+
+query = "SELECT * FROM news_data"
+
+df = pd.read_sql(query, conn)
