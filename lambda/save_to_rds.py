@@ -43,3 +43,6 @@ for article in data["results"][:10]:
 conn.commit()
 
 print("News saved to AWS RDS!")
+
+cur.close()
+conn.close()
