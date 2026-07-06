@@ -34,3 +34,8 @@ for article in data["results"][:10]:
         sentiment = "Negative"
     else:
         sentiment = "Neutral"
+
+    cur.execute(
+        "INSERT INTO news_data(title, sentiment) VALUES (%s, %s)",
+        (title, sentiment)
+    )
