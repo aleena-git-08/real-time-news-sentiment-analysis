@@ -21,3 +21,5 @@ CREATE TABLE IF NOT EXISTS news_data (
     sentiment VARCHAR(20)
 );
 """)
+
+conn.commit()
