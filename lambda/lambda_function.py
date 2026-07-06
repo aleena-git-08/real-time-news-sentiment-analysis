@@ -10,3 +10,5 @@ def lambda_handler(event, context):
     url = f"https://newsdata.io/api/1/latest?apikey={API_KEY}&language=en"
 
     data = requests.get(url).json()
+    
+    s3 = boto3.client("s3")
