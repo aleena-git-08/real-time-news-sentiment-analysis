@@ -16,3 +16,5 @@ s3.put_object(
     Key="news.json",
     Body=json.dumps(data)
 )
+
+print("Uploaded to S3 Successfully!")
