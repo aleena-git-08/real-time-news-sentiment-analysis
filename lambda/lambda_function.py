@@ -18,3 +18,8 @@ def lambda_handler(event, context):
         Key="news_data.json",
         Body=json.dumps(data)
     )
+
+    return {
+        "statusCode": 200,
+        "body": "News uploaded successfully"
+    }
