@@ -39,3 +39,5 @@ for article in data["results"][:10]:
         "INSERT INTO news_data(title, sentiment) VALUES (%s, %s)",
         (title, sentiment)
     )
+
+conn.commit()
