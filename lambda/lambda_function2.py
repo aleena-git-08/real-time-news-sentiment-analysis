@@ -19,3 +19,9 @@ def lambda_handler(event, context):
 
     print(bucket)
     print(key)
+
+    response = s3.get_object(Bucket=bucket, Key=key)
+
+    print("S3 object downloaded")
+
+    data = json.loads(response['Body'].read())
