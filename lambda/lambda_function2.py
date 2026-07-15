@@ -67,3 +67,12 @@ def lambda_handler(event, context):
     conn.commit()
 
     print("Committed")
+
+    cur.close()
+    conn.close()
+
+    print("Finished")
+
+    return {
+        "statusCode": 200
+    }
