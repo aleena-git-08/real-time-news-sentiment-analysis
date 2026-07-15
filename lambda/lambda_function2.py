@@ -25,3 +25,17 @@ def lambda_handler(event, context):
     print("S3 object downloaded")
 
     data = json.loads(response['Body'].read())
+
+    print("Connecting to RDS...")
+
+    conn = psycopg2.connect(
+        host=os.getenv("DB_HOST1"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD1"),
+        port=os.getenv("DB_PORT")
+    )
+
+    print("Connected to RDS")
+
+    cur = conn.cursor()
