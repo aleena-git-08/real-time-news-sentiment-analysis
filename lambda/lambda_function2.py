@@ -39,3 +39,19 @@ def lambda_handler(event, context):
     print("Connected to RDS")
 
     cur = conn.cursor()
+
+    for article in data["results"][:10]:
+
+        title = article.get("title")
+
+        if not title:
+            continue
+
+        score = TextBlob(title).sentiment.polarity
+
+        if score > 0:
+            sentiment = "Positive"
+        elif score < 0:
+            sentiment = "Negative"
+        else:
+            sentiment = "Neutral"
