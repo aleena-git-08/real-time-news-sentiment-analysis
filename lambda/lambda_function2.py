@@ -55,3 +55,15 @@ def lambda_handler(event, context):
             sentiment = "Negative"
         else:
             sentiment = "Neutral"
+
+        cur.execute(
+            """
+            INSERT INTO news_data(title,sentiment)
+            VALUES(%s,%s)
+            """,
+            (title, sentiment)
+        )
+
+    conn.commit()
+
+    print("Committed")
