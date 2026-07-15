@@ -7,3 +7,4 @@ lambda_package/
 *.zip
 .vscode/
 .idea/
+news-to-rds-package/
