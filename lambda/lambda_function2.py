@@ -9,3 +9,13 @@ load_dotenv()
 print("Lambda started")
 
 s3 = boto3.client("s3")
+
+def lambda_handler(event, context):
+
+    print("Reading S3 event")
+
+    bucket = event['Records'][0]['s3']['bucket']['name']
+    key = event['Records'][0]['s3']['object']['key']
+
+    print(bucket)
+    print(key)
